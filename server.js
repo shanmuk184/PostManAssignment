@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-const mongo_uri = 'mongodb://localhost/react-auth';
+const mongo_uri = 'mongodb://localhost:27017/react-auth';
 mongoose.connect(mongo_uri, { useNewUrlParser: true }, function(err) {
   if (err) {
     throw err;
@@ -36,7 +36,7 @@ app.get('/api/home', function(req, res) {
 });
 
 app.get('/api/secret', withAuth, function(req, res) {
-  res.send('The password is potato');
+  res.send('The password is '+req.email);
 });
 
 app.post('/api/register', function(req, res) {
