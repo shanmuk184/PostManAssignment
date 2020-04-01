@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 export default class Register extends Component {
   constructor(props) {
@@ -59,7 +60,7 @@ export default class Register extends Component {
           onChange={this.handleInputChange}
           required
         />
-        <input type="submit" value="Submit"/>
+        <Button type="submit" variant="primary">Submit</Button>
       </form>
     );
   }
